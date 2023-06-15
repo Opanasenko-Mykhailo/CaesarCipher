@@ -4,7 +4,19 @@ import java.util.Scanner;
 
 public class Runner {
     private int key;
-
+    public static void start(String[] args){
+        switch (args.length) {
+            case 2:
+                new Runner(args[0], args[1]);
+                break;
+            case 3:
+                new Runner(args[0], args[1], args[2]);
+                break;
+            default:
+                new Runner();
+                break;
+        }
+    }
     // Конструктор з двома аргументами(BruteForce)
     public Runner(String arg1, String arg2) {
         File file = new File(arg2);
