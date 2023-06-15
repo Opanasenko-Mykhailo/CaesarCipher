@@ -18,7 +18,7 @@ public class Runner {
         }
     }
     // Конструктор з двома аргументами(BruteForce)
-    public Runner(String arg1, String arg2) {
+    private Runner(String arg1, String arg2) {
         File file = new File(arg2);
         if (file.exists()) {
             if(arg1.equalsIgnoreCase("BRUTE_FORCE")){
@@ -29,7 +29,7 @@ public class Runner {
     }
 
     // Конструктор з трьома аргументами(Caesar Cipher)
-    public Runner(String arg1, String arg2, String arg3) {
+    private Runner(String arg1, String arg2, String arg3) {
         if (arg1.equalsIgnoreCase("ENCRYPT")||arg1.equalsIgnoreCase("DECRYPT")){
             File file = new File(arg2);
             if (file.exists()) {
@@ -52,7 +52,7 @@ public class Runner {
         }
     }
     // Конструктор без аргументів
-    public Runner(){
+    private Runner(){
         Scanner console = new Scanner(System.in);
         System.out.println("Choose a convenient mode\n 1. Console mode(CLI)\n 2. Interface mode(GUI)");
         try {
