@@ -11,10 +11,10 @@ public class Implementation {
         String fileContent = FileService.readFile(path);
         // Отримуємо алфавіт, відповідно до мови тексту
         var alphabet = new AlphabetList().autoSelectAlphabet(fileContent);
-        if (command.equals("E") || command.equals("e") || command.equalsIgnoreCase("ENCRYPT")) {
+        if (command.equalsIgnoreCase("e") || command.equalsIgnoreCase("ENCRYPT")) {
             actionText = "[ENCRYPTED]";
             encryptedText = CaesarCipher.encrypt(fileContent, alphabet, key);
-        } else if (command.equals("D") || command.equals("d")|| command.equalsIgnoreCase("DECRYPT")) {
+        } else if (command.equalsIgnoreCase("d")|| command.equalsIgnoreCase("DECRYPT")) {
             actionText = ("[DECRYPTED]");
             encryptedText = CaesarCipher.decrypt(fileContent, alphabet, key);
         }

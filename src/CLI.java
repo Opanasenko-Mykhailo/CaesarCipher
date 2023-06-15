@@ -8,13 +8,13 @@ public class CLI{
         System.out.println("Type the letter corresponding to the command into the console\n [e]ncrypt\n [d]ecrypt\n [b]rute force");
         String command = scanner.nextLine();// Записуємо перший аргумент у змінну
         // Перевіряємо, чи підходить хоч по одному ключі наш аргумент
-        if (command.equals("e")||command.equals("E")||command.equals("d")||command.equals("D")||command.equals("b")||command.equals("B")){
+        if (command.equalsIgnoreCase("e")||command.equalsIgnoreCase("d")||command.equalsIgnoreCase("b")){
             System.out.println("Enter a link to the file");
             String path = scanner.nextLine(); // Записуємо посилання в змінну
             File file = new File(path);
             // Перевіряємо чи існує файл за посиланням
             if (file.exists()) {
-                if(command.equals("b")||command.equals("B")){
+                if(command.equalsIgnoreCase("b")){
                     System.out.println(new Implementation().launchBruteForce(path));
                     return;
                 }
